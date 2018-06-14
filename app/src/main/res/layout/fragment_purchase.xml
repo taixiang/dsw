@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:id="@+id/container"
+    >
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_isbn"
+                android:text="ISBN:"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/et_isbn"
+                android:layout_toRightOf="@+id/tv_isbn"
+
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/edit_shape"
+                android:layout_toLeftOf="@+id/check"
+                android:hint="请直接输入或者扫码查询"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textColor="#FF999999"
+                android:textColorHint="#FF999999"
+                android:inputType="number"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:text="查询"
+                android:id="@+id/check"
+                android:layout_toLeftOf="@+id/iv_zxing"
+                android:layout_marginRight="10dp"
+                android:layout_centerVertical="true"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/iv_zxing"
+                android:src="@mipmap/zxing"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_centerVertical="true"
+                android:layout_width="38dp"
+                android:layout_height="38dp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/photo_container"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/iv_photo"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/tv_add_photo"
+                    android:text="点击添加封面"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:background="#d7d7d7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/edit_shape"
+                    android:layout_toLeftOf="@+id/search"
+                    android:layout_marginTop="5dp"
+                    android:hint="书名"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:singleLine="true"
+                    android:textColor="#FF999999"
+                    android:textColorHint="#FF999999"
+                    android:textSize="14sp"/>
+
+                <EditText
+                    android:id="@+id/et_author"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/edit_shape"
+                    android:layout_marginTop="5dp"
+                    android:layout_toLeftOf="@+id/search"
+                    android:hint="作者"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:singleLine="true"
+                    android:textColor="#FF999999"
+                    android:textColorHint="#FF999999"
+                    android:textSize="14sp"/>
+                <EditText
+                    android:id="@+id/et_publish"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/edit_shape"
+                    android:layout_marginTop="5dp"
+                    android:layout_toLeftOf="@+id/search"
+                    android:hint="出版社"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:singleLine="true"
+                    android:textColor="#FF999999"
+                    android:textColorHint="#FF999999"
+                    android:textSize="14sp"/>
+                <EditText
+                    android:id="@+id/et_original"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:inputType="number"
+                    android:background="@drawable/edit_shape"
+                    android:layout_toLeftOf="@+id/search"
+                    android:layout_marginTop="5dp"
+                    android:hint="原价"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:singleLine="true"
+                    android:textColor="#FF999999"
+                    android:textColorHint="#FF999999"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="出售价："
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/et_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:inputType="number"
+                    android:background="@drawable/edit_shape"
+                    android:layout_toLeftOf="@+id/search"
+                    android:hint=""
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:singleLine="true"
+                    android:textColor="#FF999999"
+                    android:textColorHint="#FF999999"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="数量："
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/et_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/edit_shape"
+                    android:inputType="number"
+                    android:layout_toLeftOf="@+id/search"
+                    android:hint=""
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:singleLine="true"
+                    android:textColor="#FF999999"
+                    android:textColorHint="#FF999999"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="新旧程度："
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/et_status"
+                android:layout_width="match_parent"
+                android:focusable="false"
+                android:editable="false"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/edit_shape"
+                android:layout_toLeftOf="@+id/search"
+                android:hint=""
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="#FF999999"
+                android:textColorHint="#FF999999"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="备注："
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/et_remark"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/edit_shape"
+                android:layout_toLeftOf="@+id/search"
+                android:hint=""
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="#FF999999"
+                android:textColorHint="#FF999999"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:background="@color/title_background"
+            android:textColor="@color/white"
+            android:text="发布"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
