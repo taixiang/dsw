@@ -6,7 +6,7 @@ package com.dingshuwang;
 public class APIURL {
 
     public static final String URL = "http://m.iisbn.com/";
-    public static final String BASE_API_URL ="http://www.iisbn.com/API/";
+    public static final String BASE_API_URL ="http://www.iisbn.com/api/";
 
 
     //首页轮播
@@ -182,4 +182,7 @@ public class APIURL {
 
   //我的发布
   public static final String MY_PUBLISH = BASE_API_URL + "users.ashx?action=publish_list&user_id=%s";
+
+  //http://www.iisbn.com/api/pro.ashx?action=scancode_waitmsg&isbn=9787810666398
+  public static final String SCANCODE = BASE_API_URL + "pro.ashx?action=scancode_waitmsg&isbn=%s";
 }

@@ -101,6 +101,9 @@ public class Constants {
 
     public static final int CAMMER_PURCHASE = 700; //采购扫描isbn返回 resultcode
 
+    public static final int CODE_ISBN = 800; //专业扫描isbn返回 requestcode
+    public static final int CODE_ISBN_RES = 900; //专业扫描isbn返回 resultcode
+
 
     /**
      * 图片浏览

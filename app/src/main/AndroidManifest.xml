@@ -95,10 +95,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"/>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".KeywordsListActivity"/>
-        <activity android:name=".SearchCommonActivity"   />
+        <activity android:name=".LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".RegisterActivity"  android:screenOrientation="portrait"/>
+        <activity android:name=".KeywordsListActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".SearchCommonActivity"   android:screenOrientation="portrait"/>
 
         <!-- alipay sdk begin -->
         <activity
@@ -135,30 +135,31 @@
                 <action android:name="android.intent.action" />
             </intent-filter>
         </activity>
-        <activity android:name=".SearchFindActivity" />
-        <activity android:name=".DetailActivity" />
-        <activity android:name=".NovelActivity" />
-        <activity android:name="com.xys.libzxing.zxing.activity.CaptureActivity" />
-        <activity android:name=".ShopCartActivity" />
-        <activity android:name=".IsbnCodeActivity" />
-        <activity android:name=".SearchAdvancedActivity" />
-        <activity android:name=".ConfirmActivity" />
-        <activity android:name=".AddressListActivity" />
-        <activity android:name=".AddressEditActivity" />
-        <activity android:name=".AdvanceListActivity" />
-        <activity android:name=".WebViewAct" />
-        <activity android:name=".TestAct" />
-        <activity android:name=".CouponsActivity" />
-        <activity android:name=".PointActivity" />
-        <activity android:name=".CollectListActivity" />
-        <activity android:name=".ConnectUsActivity" />
-        <activity android:name=".PayActivity" />
-        <activity android:name=".ToPayActivity" />
-        <activity android:name=".ExpOrderActivity" />
-        <activity android:name=".ForExpActivity" />
-        <activity android:name=".CompleteActivity" />
-        <activity android:name=".AllOrderActivity" />
-        <activity android:name=".MyPublishActivity" />
+        <activity android:name=".SearchFindActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".DetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".NovelActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xys.libzxing.zxing.activity.CaptureActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ShopCartActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".IsbnCodeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".SearchAdvancedActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ConfirmActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".AddressListActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".AddressEditActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".AdvanceListActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".WebViewAct" android:screenOrientation="portrait"/>
+        <activity android:name=".TestAct" android:screenOrientation="portrait"/>
+        <activity android:name=".CouponsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".PointActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".CollectListActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ConnectUsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".PayActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ToPayActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ExpOrderActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ForExpActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".CompleteActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".AllOrderActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".MyPublishActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ScanCodeActivity" android:screenOrientation="portrait"/>
 
         <!-- 【必须】 信鸽service -->
         <service

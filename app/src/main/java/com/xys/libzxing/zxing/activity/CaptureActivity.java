@@ -34,6 +34,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.dingshuwang.Constants;
+import com.dingshuwang.event.IsbnCodeEvent;
+import com.dingshuwang.fragment.ScanCodeFragment;
 import com.dingshuwang.util.UIUtil;
 import com.google.zxing.Result;
 import com.dingshuwang.R;
@@ -42,6 +44,8 @@ import com.xys.libzxing.zxing.decode.DecodeThread;
 import com.xys.libzxing.zxing.utils.BeepManager;
 import com.xys.libzxing.zxing.utils.CaptureActivityHandler;
 import com.xys.libzxing.zxing.utils.InactivityTimer;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -210,6 +214,9 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
             this.setResult(Constants.CAMMER_PUBLISH, resultIntent);
         }else if(tag == 3){
             this.setResult(Constants.CAMMER_PURCHASE, resultIntent);
+        }else if(tag == 4){
+            EventBus.getDefault().post(new IsbnCodeEvent(rawResult.getText()));
+            this.setResult(Constants.CODE_ISBN_RES, resultIntent);
         }
         CaptureActivity.this.finish();
     }

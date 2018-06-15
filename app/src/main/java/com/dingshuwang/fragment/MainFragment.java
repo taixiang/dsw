@@ -26,6 +26,8 @@ import com.dingshuwang.base.MMApplication;
 import com.dingshuwang.interfaceFile.GoHomeListener;
 import com.dingshuwang.util.PhotoUtils;
 
+import org.greenrobot.eventbus.EventBus;
+
 /**
  * Created by tx on 2017/6/6.
  */
@@ -37,7 +39,7 @@ public class MainFragment extends BaseFragment {
     private static final String TAB_PUBLISH = "发布";
     private static final String TAB_SHOPPINGCART = "购物车";
     private static final String TAB_ME = "我的";
-    public static final String TAB_PURCHASE = "求购";
+    public static final String TAB_PURCHASE = "扫码ISBN";
 
     private boolean isPublish;
     private boolean isShoppingCart;
@@ -133,7 +135,7 @@ public class MainFragment extends BaseFragment {
         mFragmentTabHost.addTab(mFragmentTabHost.newTabSpec(btnPublish.getText().toString()).setIndicator(viewPublish), PublishFragment.class, null);
         mFragmentTabHost.addTab(mFragmentTabHost.newTabSpec(btnShoppingCart.getText().toString()).setIndicator(viewShop), ShoppingCartFragment.class, null);
         mFragmentTabHost.addTab(mFragmentTabHost.newTabSpec(btnUser.getText().toString()).setIndicator(viewUser), UserCenterFragment.class, null);
-        mFragmentTabHost.addTab(mFragmentTabHost.newTabSpec(btnPurchase.getText().toString()).setIndicator(viewPurchase), PurchaseFragment.class, null);
+        mFragmentTabHost.addTab(mFragmentTabHost.newTabSpec(btnPurchase.getText().toString()).setIndicator(viewPurchase), ScanCodeFragment.class, null);
 
         mFragmentTabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener()
         {
@@ -178,9 +180,9 @@ public class MainFragment extends BaseFragment {
                 if(isUser&& !MMApplication.mIsLogin){
                     toFirstTab(3);
                 }
-                if(isPurchase && !MMApplication.mIsLogin){
-                    loadNext(LoginActivity.class);
-                }
+//                if(isPurchase && !MMApplication.mIsLogin){
+//                    loadNext(LoginActivity.class);
+//                }
             }
         });
     }
@@ -236,11 +238,16 @@ public class MainFragment extends BaseFragment {
         }else if(resultCode == Constants.CAMMER_PUBLISH){ //发布扫描后返回
             toTab(2);
         }else if(resultCode == Constants.CAMMER_PURCHASE){ //采购返回
-            toTab(5);
+//            toTab(5);
         }else if(requestCode == PhotoUtils.REQUEST_FROM_CAMERA_2 || PhotoUtils.REQUEST_FROM_PHOTO_2 == requestCode){ //发布添加封面
+//            toTab(5);
+        }else if(requestCode == Constants.CODE_ISBN){ //专业扫描isbn
             toTab(5);
         }else{
-            toTab(0);
+            if(!MMApplication.mIsLogin){
+                toTab(0);
+            }
+//            toTab(0);
         }
     }
 
