@@ -3,12 +3,14 @@ package com.dingshuwang.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.NestedScrollView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.dingshuwang.APIURL;
@@ -44,6 +46,9 @@ public class ScanCodeFragment extends BaseFragment implements DataView {
 
     @Bind(R.id.container)
     LinearLayout container;
+
+    @Bind(R.id.scrollView)
+    NestedScrollView scrollView;
 
     public static ScanCodeFragment newInstance(String isbn) {
         ScanCodeFragment fragment = new ScanCodeFragment();
@@ -110,6 +115,13 @@ public class ScanCodeFragment extends BaseFragment implements DataView {
                 ScanCodeView view = new ScanCodeView(mActivity);
                 view.setData(mActivity,item);
                 container.addView(view);
+                scrollView.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        scrollView.fullScroll(ScrollView.FOCUS_DOWN);
+                    }
+                });
+
             } else {
                 TextView tv = new TextView(mActivity);
                 tv.setText(item.getMessage());
